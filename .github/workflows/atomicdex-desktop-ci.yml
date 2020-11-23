@@ -57,7 +57,7 @@ jobs:
 
       - name: Install QT (Linux)
         if: runner.os == 'Linux'
-        uses: KomodoPlatform/install-qt-action@v2.9.0
+        uses: KomodoPlatform/install-qt-action@89911e5b5d0d7508d5c5ffe6b3d4cb406f9beae9
         with:
           version: ${{ matrix.qt }}
           host: 'linux'
@@ -69,7 +69,7 @@ jobs:
 
       - name: Install QT (MacOS)
         if: runner.os == 'macOS'
-        uses: KomodoPlatform/install-qt-action@v2.9.0
+        uses: KomodoPlatform/install-qt-action@89911e5b5d0d7508d5c5ffe6b3d4cb406f9beae9
         with:
           version: ${{ matrix.qt }}
           host: 'mac'
@@ -85,7 +85,7 @@ jobs:
 
       - name: Install QT (Windows)
         if: runner.os == 'Windows'
-        uses: KomodoPlatform/install-qt-action@v2.9.0
+        uses: KomodoPlatform/install-qt-action@89911e5b5d0d7508d5c5ffe6b3d4cb406f9beae9
         with:
           version: ${{ matrix.qt }}
           host: 'windows'
