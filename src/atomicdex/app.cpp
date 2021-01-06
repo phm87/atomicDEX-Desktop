@@ -152,7 +152,7 @@ namespace atomic_dex
         QStringList coins_copy;
         for (auto&& coin: coins)
         {
-            if (not get_orders()->swap_is_in_progress(coin) && coin != "KMD" && coin != "BTC")
+            if (not get_orders()->swap_is_in_progress(coin) && coin != "PBC" && coin != "BTC")
             {
                 if (coin == "ETH" || coin == "QTUM")
                 {
@@ -175,7 +175,7 @@ namespace atomic_dex
             {
                 if (QString::fromStdString(get_mm2().get_current_ticker()) == coin && m_kmd_fully_enabled)
                 {
-                    system_manager_.get_system<wallet_page>().set_current_ticker("KMD");
+                    system_manager_.get_system<wallet_page>().set_current_ticker("PBC");
                 }
                 coins_std.push_back(coin.toStdString());
             }
@@ -249,7 +249,7 @@ namespace atomic_dex
                 const char* ticker_cstr = nullptr;
                 m_portfolio_queue.pop(ticker_cstr);
                 std::string ticker(ticker_cstr);
-                if (ticker == "KMD")
+                if (ticker == "PBC")
                 {
                     this->m_kmd_fully_enabled = true;
                 }
@@ -266,7 +266,7 @@ namespace atomic_dex
                 system_manager_.get_system<portfolio_page>().get_portfolio()->initialize_portfolio(to_init);
                 if (m_kmd_fully_enabled && m_btc_fully_enabled)
                 {
-                    if (std::find(to_init.begin(), to_init.end(), "KMD") != to_init.end())
+                    if (std::find(to_init.begin(), to_init.end(), "PBC") != to_init.end())
                     {
                         get_wallet_page()->get_transactions_mdl()->reset();
                         this->dispatcher_.trigger<tx_fetch_finished>();
@@ -1122,7 +1122,7 @@ namespace atomic_dex
 
         qApp->quit();
 
-        if (appimage == nullptr || not QString(appimage).contains("atomicdex-desktop"))
+        if (appimage == nullptr || not QString(appimage).contains("smartfi-desktop"))
         {
             QProcess::startDetached(qApp->arguments()[0], qApp->arguments(), qApp->applicationDirPath());
         }

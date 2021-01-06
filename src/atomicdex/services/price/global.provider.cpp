@@ -160,18 +160,18 @@ namespace atomic_dex
             current_price = paprika.get_rate_conversion("USD", ticker, ec);
         }
 
-        if (fiat != "KMD" && fiat != "BTC" && fiat != "USD")
+        if (fiat != "PBC" && fiat != "BTC" && fiat != "USD")
         {
             t_float_50 tmp_current_price = t_float_50(current_price) * m_other_fiats_rates->at("rates").at(fiat).get<double>();
             current_price                = tmp_current_price.str();
         }
 
-        if ((fiat == "KMD" && not is_oracle_ready) || (fiat == "BTC" && not is_oracle_ready))
+        if ((fiat == "PBC" && not is_oracle_ready) || (fiat == "BTC" && not is_oracle_ready))
         {
             t_float_50 tmp_current_price = t_float_50(current_price) * t_float_50(m_coin_rate_providers.at(fiat));
             current_price                = tmp_current_price.str();
         }
-        else if ((fiat == "BTC" || fiat == "KMD") && is_oracle_ready)
+        else if ((fiat == "BTC" || fiat == "PBC") && is_oracle_ready)
         {
             t_float_50 tmp_current_price = t_float_50(current_price) * band_service.retrieve_rates(fiat);
             current_price                = tmp_current_price.str();

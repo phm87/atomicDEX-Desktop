@@ -87,7 +87,7 @@ Item {
     readonly property var curr_fee_info: API.app.trading_pg.fees
 
     property bool initialized_orderbook_pair: false
-    readonly property string default_base: "KMD"
+    readonly property string default_base: "PBC"
     readonly property string default_rel: "BTC"
 
     // Trade
