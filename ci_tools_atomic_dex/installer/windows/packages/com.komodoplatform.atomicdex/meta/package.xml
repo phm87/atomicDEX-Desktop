@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package>
-    <DisplayName>AtomicDEX Desktop</DisplayName>
-    <Description>Install AtomicDEX Desktop.</Description>
+    <DisplayName>SmartFi Desktop</DisplayName>
+    <Description>Install SmartFi Desktop.</Description>
     <Version>0.3.1</Version>
     <ReleaseDate>2020-11-27</ReleaseDate>
     <Licenses>

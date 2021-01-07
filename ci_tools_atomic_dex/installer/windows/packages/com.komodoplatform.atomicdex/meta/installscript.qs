@@ -10,26 +10,26 @@ Component.prototype.createOperations = function()
     if (installer.value("os") === "win") {
 		// Start Menu Shortcut
         component.addOperation("CreateShortcut", 
-                               "@TargetDir@/atomicdex-desktop.exe", 
-                               "@StartMenuDir@/AtomicDEX Desktop.lnk",
+                               "@TargetDir@/smartfi-desktop.exe", 
+                               "@StartMenuDir@/SmartFi Desktop.lnk",
                                "workingDirectory=@TargetDir@", 
                                "iconPath=@TargetDir@/atomicdex-desktop.ico", "iconId=0",
-                               "description=Start AtomicDEX Desktop");
+                               "description=Start SmartFi Desktop");
         
         // Desktop Shortcut
         component.addOperation("CreateShortcut", 
-                            "@TargetDir@/atomicdex-desktop.exe",
-                            "@DesktopDir@/AtomicDEX Desktop.lnk",
+                            "@TargetDir@/smartfi-desktop.exe",
+                            "@DesktopDir@/SmartFi Desktop.lnk",
                             "workingDirectory=@TargetDir@",
                             "iconPath=@TargetDir@/atomicdex-desktop.ico", "iconId=0",
-                            "description=Start AtomicDEX Desktop");
+                            "description=Start SmartFi Desktop");
 
 		// Maintenance Tool Start Menu Shortcut
         component.addOperation("CreateShortcut", 
-                               "@TargetDir@/AtomicDEX Maintenance Tool.exe", 
-                               "@StartMenuDir@/AtomicDEX Maintenance Tool.lnk",
+                               "@TargetDir@/SmartFi Maintenance Tool.exe", 
+                               "@StartMenuDir@/SmartFi Maintenance Tool.lnk",
                                "workingDirectory=@TargetDir@", 
                                "iconPath=@TargetDir@/atomicdex-desktop.ico", "iconId=0",
-                               "description=Start AtomicDEX Maintenance Tool");
+                               "description=Start SmartFi Maintenance Tool");
     }
 }

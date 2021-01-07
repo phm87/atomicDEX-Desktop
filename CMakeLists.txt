@@ -35,7 +35,7 @@ if (APPLE)
 endif ()
 ############################ END VCPKG PREREQUISITES ##############################
 
-project(atomicdex-desktop LANGUAGES CXX VERSION 0.3.1)
+project(smartfi-desktop LANGUAGES CXX VERSION 0.3.1)
 
 option(DISABLE_GEOBLOCKING "Enable to disable geoblocking (for dev purpose)" OFF)
 option(PREFER_BOOST_FILESYSTEM "Enable to use boost filesystem instead of std::filesystem" OFF)
@@ -265,7 +265,7 @@ target_include_directories(atomicdex-desktop_shared_deps
         )
 
 ##! Main executable
-add_executable(atomicdex-desktop MACOSX_BUNDLE ${ICON}
+add_executable(smartfi-desktop MACOSX_BUNDLE ${ICON}
         ${CMAKE_CURRENT_SOURCE_DIR}/data/windows/atomicdex-desktop.rc
         main.cpp
         ##! QRC
@@ -276,7 +276,7 @@ add_executable(atomicdex-desktop MACOSX_BUNDLE ${ICON}
         ${TS_FILES}
         )
 
-target_compile_definitions(atomicdex-desktop PRIVATE ENTT_API_IMPORT)
+target_compile_definitions(smartfi-desktop PRIVATE ENTT_API_IMPORT)
 
 ##! Testing executable
 add_executable(atomicdex-desktop_tests MACOSX_BUNDLE ${ICON}
@@ -287,12 +287,12 @@ add_executable(atomicdex-desktop_tests MACOSX_BUNDLE ${ICON}
         src/atomicdex/tests/atomic.dex.qt.utilities.tests.cpp
         src/atomicdex/tests/atomic.dex.provider.cex.prices.api.tests.cpp)
 
-target_link_libraries(atomicdex-desktop
+target_link_libraries(smartfi-desktop
         PUBLIC
         atomicdex-desktop_shared_deps
         )
 
-target_include_directories(atomicdex-desktop PUBLIC src)
+target_include_directories(smartfi-desktop PUBLIC src)
 
 target_link_libraries(atomicdex-desktop_tests
         PUBLIC
@@ -320,7 +320,7 @@ if (APPLE)
 endif ()
 
 #target_enable_tsan(atomicdex-desktop_tests)
-#target_enable_asan(atomicdex-desktop)
+#target_enable_asan(smartfi-desktop)
 
 ##! Move assets
 if (LINUX)
@@ -328,17 +328,17 @@ if (LINUX)
     set(output_dir_at "${exe_runtime_directory_at}/AntaraAtomicDexAppDir")
 
     magic_game_app_image_generation("${CMAKE_CURRENT_SOURCE_DIR}/data/linux"
-            "atomicdex-desktop.desktop"
-            "atomicdex-desktop.appdata.xml"
+            "smartfi-desktop.desktop"
+            "smartfi-desktop.appdata.xml"
             "atomicdex-desktop_64.png"
-            atomicdex-desktop
+            smartfi-desktop
             AntaraAtomicDexAppDir
             ${CMAKE_CURRENT_SOURCE_DIR}/assets
             )
 
     magic_game_app_image_generation("${CMAKE_CURRENT_SOURCE_DIR}/data/linux"
-            "atomicdex-desktop.desktop"
-            "atomicdex-desktop.appdata.xml"
+            "smartfi-desktop.desktop"
+            "smartfi-desktop.appdata.xml"
             "atomicdex-desktop_64.png"
             atomicdex-desktop_tests
             AntaraAtomicDexTestsAppDir
@@ -346,8 +346,8 @@ if (LINUX)
             )
 
     set(from_dir "${CMAKE_CURRENT_SOURCE_DIR}/data/linux")
-    set(desktop_file "atomicdex-desktop.desktop")
-    set(appdata_file "atomicdex-desktop.appdata.xml")
+    set(desktop_file "smartfi-desktop.desktop")
+    set(appdata_file "smartfi-desktop.appdata.xml")
     set(app_icon "atomicdex-desktop-64.png")
     message(STATUS "${output_dir_at}")
     configure_file(${from_dir}/${desktop_file} ${output_dir_at}/usr/share/applications/${desktop_file} COPYONLY)
@@ -365,9 +365,9 @@ if (WIN32)
     set_target_properties(Folly::folly PROPERTIES INTERFACE_COMPILE_OPTIONS "")
     if (CMAKE_BUILD_TYPE MATCHES Release)
         message(STATUS "disabling console")
-        target_compile_definitions(atomicdex-desktop PRIVATE WINDOWS_RELEASE_MAIN)
-        target_compile_options(atomicdex-desktop PRIVATE -Wno-deprecated-declarations)
-        target_link_options(atomicdex-desktop PUBLIC --for-linker -subsystem:windows)
+        target_compile_definitions(smartfi-desktop PRIVATE WINDOWS_RELEASE_MAIN)
+        target_compile_options(smartfi-desktop PRIVATE -Wno-deprecated-declarations)
+        target_link_options(smartfi-desktop PUBLIC --for-linker -subsystem:windows)
     endif ()
     set(WINDEPLOYQT_PATH "")
     if (CONAN_ENABLED)
@@ -381,11 +381,11 @@ if (WIN32)
     else ()
         message(FATAL_ERROR "Didn't find windeployqt ${WINDEPLOYQT_PATH}")
     endif ()
-    add_custom_command(TARGET atomicdex-desktop PRE_BUILD
+    add_custom_command(TARGET smartfi-desktop PRE_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_directory
-            ${CMAKE_SOURCE_DIR}/ci_tools_atomic_dex/windows_misc $<TARGET_FILE_DIR:atomicdex-desktop>)
+            ${CMAKE_SOURCE_DIR}/ci_tools_atomic_dex/windows_misc $<TARGET_FILE_DIR:smartfi-desktop>)
     message(STATUS "${WINDEPLOYQT_PATH} ${CMAKE_BINARY_DIR}/bin/${PROJECT_NAME}.exe ${CMAKE_BINARY_DIR}/bin/${PROJECT_NAME}_shared_deps.dll --qmldir ${CMAKE_SOURCE_DIR}/atomic_defi_design/qml")
-    add_custom_command(TARGET atomicdex-desktop
+    add_custom_command(TARGET smartfi-desktop
             POST_BUILD
             COMMAND ${WINDEPLOYQT_PATH} ${CMAKE_BINARY_DIR}/bin/${PROJECT_NAME}.exe ${CMAKE_BINARY_DIR}/bin/${PROJECT_NAME}_shared_deps.dll --qmldir ${CMAKE_SOURCE_DIR}/atomic_defi_design/qml
             )
@@ -463,5 +463,5 @@ if (WITH_HOTRELOAD)
         qt_generate_plugin_import(${QATERIALHOTRELOAD_LIB})
     endif ()
 
-    target_link_libraries(atomicdex-desktop PRIVATE Qaterial::HotReload)
+    target_link_libraries(smartfi-desktop PRIVATE Qaterial::HotReload)
 endif ()
