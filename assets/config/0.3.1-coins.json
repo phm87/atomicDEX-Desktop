@@ -662,7 +662,7 @@
     "explorer_url": [
       "https://kmdexplorer.io/"
     ],
-    "active": true,
+    "active": false,
     "currently_enabled": false
   },
   "LABS": {
@@ -1342,7 +1342,7 @@
       "https://explorer.pbc.kmd.sh/"
     ],
     "type": "UTXO",
-    "active": false,
+    "active": true,
     "currently_enabled": false
   }
 }

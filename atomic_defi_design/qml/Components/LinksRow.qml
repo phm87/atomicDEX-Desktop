@@ -14,11 +14,11 @@ RowLayout {
         text: qsTr("Join the Komodo Discord server")
     }
 
-//    LinkIcon {
-//        link: "https://twitter.com/AtomicDEX"
-//        source: General.image_path + "icon-twitter.png"
-//        text: qsTr("Follow @atomicdex on Twitter")
-//    }
+    LinkIcon {
+        link: "https://twitter.com/powerblockcoin"
+        source: General.image_path + "icon-twitter.png"
+        text: qsTr("Follow @powerblockcoin on Twitter")
+    }
 
     LinkIcon {
         link: "https://support.komodoplatform.com/support/home"

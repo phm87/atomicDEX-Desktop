@@ -1,4 +1,4 @@
-name: SmartFi-Desktop CD releases
+name: AtomicDex-Desktop CD releases
 
 on:
   push:
