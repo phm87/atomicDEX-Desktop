@@ -116,7 +116,7 @@ namespace atomic_dex
         async_fetch_fiat_rates()
             .then([this](web::http::http_response resp) {
                 this->m_other_fiats_rates = process_fetch_fiat_answer(resp);
-                refresh_other_coins_rates("kmd-komodo", "KMD");
+                // refresh_other_coins_rates("kmd-komodo", "KMD");
                 refresh_other_coins_rates("btc-bitcoin", "BTC");
             })
             .then(&handle_exception_pplx_task);
@@ -137,7 +137,7 @@ namespace atomic_dex
             async_fetch_fiat_rates()
                 .then([this](web::http::http_response resp) {
                     this->m_other_fiats_rates = process_fetch_fiat_answer(resp);
-                    refresh_other_coins_rates("kmd-komodo", "KMD");
+                    // refresh_other_coins_rates("kmd-komodo", "KMD");
                     refresh_other_coins_rates("btc-bitcoin", "BTC", true);
                 })
                 .then(&handle_exception_pplx_task);
@@ -161,13 +161,13 @@ namespace atomic_dex
             current_price = paprika.get_rate_conversion(ticker);
         }
 
-        if (fiat != "KMD" && fiat != "BTC" && fiat != "USD")
+        if (fiat != "PBC" && fiat != "BTC" && fiat != "USD")
         {
             t_float_50 tmp_current_price = t_float_50(current_price) * m_other_fiats_rates->at("rates").at(fiat).get<double>();
             current_price                = tmp_current_price.str();
         }
 
-        if ((fiat == "KMD" && not is_oracle_ready) || (fiat == "BTC" && not is_oracle_ready))
+        if ((fiat == "PBC" && not is_oracle_ready) || (fiat == "BTC" && not is_oracle_ready))
         {
             t_float_50 rate(1);
             {
@@ -177,7 +177,7 @@ namespace atomic_dex
             t_float_50 tmp_current_price = t_float_50(current_price) * rate;
             current_price                = tmp_current_price.str();
         }
-        else if ((fiat == "BTC" || fiat == "KMD") && is_oracle_ready)
+        else if ((fiat == "BTC" || fiat == "PBC") && is_oracle_ready)
         {
             t_float_50 tmp_current_price = t_float_50(current_price) * band_service.retrieve_rates(fiat);
             current_price                = tmp_current_price.str();

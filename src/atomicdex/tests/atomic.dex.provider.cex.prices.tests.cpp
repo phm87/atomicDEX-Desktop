@@ -48,16 +48,16 @@ TEST_CASE("atomic dex cex prices provider constructor")
         {
             registry.ctx<entt::dispatcher>().trigger<atomic_dex::mm2_started>();
 
-            AND_WHEN("i set the current orderbook pair to a valid supported pair (kmd-btc)")
+            AND_WHEN("i set the current orderbook pair to a valid supported pair (pbc-btc)")
             {
-                registry.ctx<entt::dispatcher>().trigger<atomic_dex::orderbook_refresh>("kmd", "btc");
+                registry.ctx<entt::dispatcher>().trigger<atomic_dex::orderbook_refresh>("pbc", "btc");
                 using namespace std::chrono_literals;
                 cex_system.consume_pending_tasks();
 
                 AND_THEN("i check if data are available, and if the port is not supported")
                 {
                     CHECK(cex_system.is_ohlc_data_available());
-                    CHECK(cex_system.is_pair_supported("kmd", "btc").first);
+                    CHECK(cex_system.is_pair_supported("pbc", "btc").first);
                     CHECK_FALSE(cex_system.get_ohlc_data("60").empty());
                 }
             }

@@ -77,10 +77,10 @@ namespace atomic_dex
         reproc::process m_mm2_instance;
 
         //! Current ticker
-        t_synchronized_ticker m_current_ticker{"KMD"};
+        t_synchronized_ticker m_current_ticker{"PBC"};
 
         //! Current orderbook
-        t_synchronized_ticker_pair   m_synchronized_ticker_pair{std::make_pair("KMD", "BTC")};
+        t_synchronized_ticker_pair   m_synchronized_ticker_pair{std::make_pair("PBC", "BTC")};
         t_synchronized_max_taker_vol m_synchronized_max_taker_vol;
 
         //! Timers

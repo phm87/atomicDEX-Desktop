@@ -480,7 +480,7 @@ namespace atomic_dex
             nlohmann::json     j = ::mm2::api::template_request("electrum");
             ::mm2::api::to_json(j, request);
             btc_kmd_batch.push_back(j);
-            coin_info = get_coin_info("KMD");
+            coin_info = get_coin_info("PBC");
             t_electrum_request request_kmd{.coin_name = coin_info.ticker, .servers = coin_info.electrum_urls.value(), .with_tx_history = true};
             j = ::mm2::api::template_request("electrum");
             ::mm2::api::to_json(j, request_kmd);
@@ -493,7 +493,7 @@ namespace atomic_dex
 
         for (const auto& ticker: tickers)
         {
-            if (ticker == "BTC" || ticker == "KMD")
+            if (ticker == "BTC" || ticker == "PBC")
                 continue;
             copy_tickers.push_back(ticker);
             coin_config coin_info = get_coin_info(ticker);
@@ -588,7 +588,7 @@ namespace atomic_dex
 
         if (not btc_kmd_batch.empty() && first_time)
         {
-            functor(btc_kmd_batch, {"BTC", "KMD"});
+            functor(btc_kmd_batch, {"BTC", "PBC"});
         }
 
         if (not batch_array.empty())
