@@ -235,7 +235,7 @@ jobs:
           export QT_ROOT=${{ github.workspace }}/Qt/${{ matrix.qt }}
           echo "Running tests"
           ./ci_tools_atomic_dex tests release
-          cd build-Release/bin/atomicdex-desktop_tests.app/Contents/MacOS
+          cd build-Release/bin/smartfi-desktop_tests.app/Contents/MacOS
           cat atomic-dex-tests-result.xml
           curl https://report.ci/upload.py --output upload.py
           ls

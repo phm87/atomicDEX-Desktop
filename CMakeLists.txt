@@ -279,7 +279,7 @@ add_executable(smartfi-desktop MACOSX_BUNDLE ${ICON}
 target_compile_definitions(smartfi-desktop PRIVATE ENTT_API_IMPORT)
 
 ##! Testing executable
-add_executable(atomicdex-desktop_tests MACOSX_BUNDLE ${ICON}
+add_executable(smartfi-desktop_tests MACOSX_BUNDLE ${ICON}
         src/atomicdex/tests/atomic.dex.tests.cpp
         src/atomicdex/tests/atomic.dex.wallet.config.tests.cpp
         src/atomicdex/tests/atomic.dex.utilities.tests.cpp
@@ -294,7 +294,7 @@ target_link_libraries(smartfi-desktop
 
 target_include_directories(smartfi-desktop PUBLIC src)
 
-target_link_libraries(atomicdex-desktop_tests
+target_link_libraries(smartfi-desktop_tests
         PUBLIC
         #atomicdex-desktop_shared_deps
         doctest::doctest)
@@ -319,7 +319,7 @@ if (APPLE)
     set_source_files_properties(src/atomicdex/platform/osx/manager.mm PROPERTIES SKIP_UNITY_BUILD_INCLUSION ON)
 endif ()
 
-#target_enable_tsan(atomicdex-desktop_tests)
+#target_enable_tsan(smartfi-desktop_tests)
 #target_enable_asan(smartfi-desktop)
 
 ##! Move assets
@@ -340,7 +340,7 @@ if (LINUX)
             "smartfi-desktop.desktop"
             "smartfi-desktop.appdata.xml"
             "atomicdex-desktop_64.png"
-            atomicdex-desktop_tests
+            smartfi-desktop_tests
             AntaraAtomicDexTestsAppDir
             ${CMAKE_CURRENT_SOURCE_DIR}/assets
             )
