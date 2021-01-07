@@ -159,37 +159,42 @@
 <context>
     <name>AddressBook</name>
     <message>
-        <location filename="../../qml/Wallet/AddressBook.qml" line="28"/>
+        <location filename="../../qml/Wallet/AddressBook.qml" line="25"/>
         <source>Address Book</source>
         <translation>Adres Defteri</translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/AddressBook.qml" line="38"/>
+        <location filename="../../qml/Wallet/AddressBook.qml" line="35"/>
         <source>New Contact</source>
         <translation>Yeni Kişi</translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/AddressBook.qml" line="109"/>
+        <location filename="../../qml/Wallet/AddressBook.qml" line="50"/>
+        <source>Search a contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Wallet/AddressBook.qml" line="115"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/AddressBook.qml" line="118"/>
+        <location filename="../../qml/Wallet/AddressBook.qml" line="124"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/AddressBook.qml" line="159"/>
+        <location filename="../../qml/Wallet/AddressBook.qml" line="165"/>
         <source>Do you want to remove this contact ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/AddressBook.qml" line="163"/>
+        <location filename="../../qml/Wallet/AddressBook.qml" line="169"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/AddressBook.qml" line="172"/>
+        <location filename="../../qml/Wallet/AddressBook.qml" line="178"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
@@ -569,12 +574,12 @@
         <translation>%1&apos;i etkinsizleştir ve sil</translation>
     </message>
     <message>
-        <location filename="../../qml/Components/CoinMenu.qml" line="47"/>
+        <location filename="../../qml/Components/CoinMenu.qml" line="46"/>
         <source>Disable all %1 assets</source>
         <translation>Tüm %1 tipi varlıkları etkinsizleştir</translation>
     </message>
     <message>
-        <location filename="../../qml/Components/CoinMenu.qml" line="53"/>
+        <location filename="../../qml/Components/CoinMenu.qml" line="52"/>
         <source>Disable all assets</source>
         <translation>Tüm varlıkları etkinsizleştir</translation>
     </message>
@@ -934,62 +939,37 @@
 <context>
     <name>EnableCoinModal</name>
     <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="55"/>
+        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="34"/>
         <source>Enable assets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="59"/>
-        <source>Enable All Assets</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="59"/>
-        <source>Clear All Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="73"/>
+        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="38"/>
         <source>Add a custom asset to the list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="109"/>
-        <source>Select all QRC20 assets</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="121"/>
-        <source>Select all ERC20 assets</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="127"/>
-        <source>Select all UTXO assets</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="137"/>
+        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="125"/>
         <source>All assets are already enabled!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="89"/>
+        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="54"/>
         <source>Search</source>
         <translation>Ara</translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="115"/>
-        <source>Select all SmartChains</source>
-        <translation>Tüm SmartChain&apos;leri seç</translation>
+        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="60"/>
+        <source>Select all assets</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="143"/>
+        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="131"/>
         <source>Close</source>
         <translation>Kapat</translation>
     </message>
     <message>
-        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="151"/>
+        <location filename="../../qml/Wallet/EnableCoinModal.qml" line="139"/>
         <source>Enable</source>
         <translation>Etkinleştir</translation>
     </message>
@@ -1030,16 +1010,16 @@
         <location filename="../../qml/Components/EulaModal.qml" line="75"/>
         <source>&lt;h2&gt;This End-User License Agreement (&apos;EULA&apos;) is a legal agreement between you and Komodo Platform.&lt;/h2&gt;
 
-&lt;p&gt;This EULA agreement governs your acquisition and use of our AtomicDEX Desktop software (&apos;Software&apos;, &apos;Mobile Application&apos;, &apos;Application&apos; or &apos;App&apos;) directly from Komodo Platform or indirectly through a Komodo Platform authorized entity, reseller or distributor (a &apos;Distributor&apos;).&lt;/p&gt;
-&lt;p&gt;Please read this EULA agreement carefully before completing the installation process and using the AtomicDEX Desktop software. It provides a license to use the AtomicDEX Desktop software and contains warranty information and liability disclaimers.&lt;/p&gt;
-&lt;p&gt;If you register for the beta program of the AtomicDEX Desktop software, this EULA agreement will also govern that trial. By clicking &apos;accept&apos; or installing and/or using the AtomicDEX Desktop software, you are confirming your acceptance of the Software and agreeing to become bound by the terms of this EULA agreement.&lt;/p&gt;
+&lt;p&gt;This EULA agreement governs your acquisition and use of our SmartFi Desktop software (&apos;Software&apos;, &apos;Mobile Application&apos;, &apos;Application&apos; or &apos;App&apos;) directly from Komodo Platform or indirectly through a Komodo Platform authorized entity, reseller or distributor (a &apos;Distributor&apos;).&lt;/p&gt;
+&lt;p&gt;Please read this EULA agreement carefully before completing the installation process and using the SmartFi Desktop software. It provides a license to use the SmartFi Desktop software and contains warranty information and liability disclaimers.&lt;/p&gt;
+&lt;p&gt;If you register for the beta program of the SmartFi Desktop software, this EULA agreement will also govern that trial. By clicking &apos;accept&apos; or installing and/or using the SmartFi Desktop software, you are confirming your acceptance of the Software and agreeing to become bound by the terms of this EULA agreement.&lt;/p&gt;
 &lt;p&gt;If you are entering into this EULA agreement on behalf of a company or other legal entity, you represent that you have the authority to bind such entity and its affiliates to these terms and conditions. If you do not have such authority or if you do not agree with the terms and conditions of this EULA agreement, do not install or use the Software, and you must not accept this EULA agreement.&lt;/p&gt;
 &lt;p&gt;This EULA agreement shall apply only to the Software supplied by Komodo Platform herewith regardless of whether other software is referred to or described herein. The terms also apply to any Komodo Platform updates, supplements, Internet-based services, and support services for the Software, unless other terms accompany those items on delivery. If so, those terms apply.&lt;/p&gt;
 
 &lt;h3&gt;License Grant&lt;/h3&gt;
-&lt;p&gt;Komodo Platform hereby grants you a personal, non-transferable, non-exclusive licence to use the AtomicDEX Desktop software on your devices in accordance with the terms of this EULA agreement.&lt;/p&gt;
+&lt;p&gt;Komodo Platform hereby grants you a personal, non-transferable, non-exclusive licence to use the SmartFi Desktop software on your devices in accordance with the terms of this EULA agreement.&lt;/p&gt;
 
-&lt;p&gt;You are permitted to load the AtomicDEX Desktop software (for example a PC, laptop, mobile or tablet) under your control. You are responsible for ensuring your device meets the minimum security and resource requirements of the AtomicDEX Desktop software.&lt;/p&gt;
+&lt;p&gt;You are permitted to load the SmartFi Desktop software (for example a PC, laptop, mobile or tablet) under your control. You are responsible for ensuring your device meets the minimum security and resource requirements of the SmartFi Desktop software.&lt;/p&gt;
 
 &lt;p&gt;&lt;b&gt;You are not permitted to:&lt;/b&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1109,14 +1089,14 @@
 <context>
     <name>General</name>
     <message numerus="yes">
-        <location filename="../../qml/Constants/General.qml" line="100"/>
+        <location filename="../../qml/Constants/General.qml" line="101"/>
         <source>%n day(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../../qml/Constants/General.qml" line="110"/>
+        <location filename="../../qml/Constants/General.qml" line="111"/>
         <source>%nd</source>
         <comment>day</comment>
         <translation type="unfinished">
@@ -1124,7 +1104,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../../qml/Constants/General.qml" line="111"/>
+        <location filename="../../qml/Constants/General.qml" line="112"/>
         <source>%nh</source>
         <comment>hours</comment>
         <translation type="unfinished">
@@ -1132,7 +1112,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../../qml/Constants/General.qml" line="112"/>
+        <location filename="../../qml/Constants/General.qml" line="113"/>
         <source>%nm</source>
         <comment>minutes</comment>
         <translation type="unfinished">
@@ -1140,7 +1120,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../../qml/Constants/General.qml" line="113"/>
+        <location filename="../../qml/Constants/General.qml" line="114"/>
         <source>%ns</source>
         <comment>seconds</comment>
         <translation type="unfinished">
@@ -1148,7 +1128,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../../qml/Constants/General.qml" line="114"/>
+        <location filename="../../qml/Constants/General.qml" line="115"/>
         <source>%nms</source>
         <comment>milliseconds</comment>
         <translation type="unfinished">
@@ -1156,68 +1136,68 @@
         </translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="115"/>
+        <location filename="../../qml/Constants/General.qml" line="116"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="344"/>
+        <location filename="../../qml/Constants/General.qml" line="345"/>
         <source>Transaction Fee</source>
         <translation type="unfinished">İşlem Ücreti</translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="359"/>
+        <location filename="../../qml/Constants/General.qml" line="360"/>
         <source>Trading Fee</source>
         <translation type="unfinished">Al-Sat Ücreti</translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="369"/>
+        <location filename="../../qml/Constants/General.qml" line="370"/>
         <source>Wallet %1 already exists</source>
         <comment>WALLETNAME</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="378"/>
+        <location filename="../../qml/Constants/General.qml" line="379"/>
         <source>Not enough balance for trading fees: %1</source>
         <comment>AMT TICKER</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="380"/>
+        <location filename="../../qml/Constants/General.qml" line="381"/>
         <source>Not enough balance for fees: %1</source>
         <comment>AMT TICKER</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="382"/>
-        <location filename="../../qml/Constants/General.qml" line="384"/>
+        <location filename="../../qml/Constants/General.qml" line="383"/>
+        <location filename="../../qml/Constants/General.qml" line="385"/>
         <source>Not enough balance for transaction fees: %1</source>
         <comment>AMT TICKER</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="386"/>
+        <location filename="../../qml/Constants/General.qml" line="387"/>
         <source>Tradable (after fees) %1 balance is lower than minimum trade amount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="388"/>
+        <location filename="../../qml/Constants/General.qml" line="389"/>
         <source>Please fill the price field</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="390"/>
+        <location filename="../../qml/Constants/General.qml" line="391"/>
         <source>Please fill the volume field</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="392"/>
-        <location filename="../../qml/Constants/General.qml" line="394"/>
+        <location filename="../../qml/Constants/General.qml" line="393"/>
+        <location filename="../../qml/Constants/General.qml" line="395"/>
         <source>%1 volume is lower than minimum trade amount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Constants/General.qml" line="396"/>
+        <location filename="../../qml/Constants/General.qml" line="397"/>
         <source>Unknown Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1280,7 +1260,7 @@
     </message>
     <message>
         <location filename="../../qml/Components/LinksRow.qml" line="18"/>
-        <source>Follow @atomicdex on Twitter</source>
+        <source>Follow @powerblockcoin on Twitter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1603,7 +1583,7 @@
     </message>
     <message>
         <location filename="../../qml/Dashboard/NotificationsModal.qml" line="201"/>
-        <source>AtomicDEX Desktop</source>
+        <source>SmartFi Desktop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1741,7 +1721,7 @@
 <context>
     <name>OrderList</name>
     <message>
-        <location filename="../../qml/Exchange/OrderList.qml" line="44"/>
+        <location filename="../../qml/Exchange/OrderList.qml" line="45"/>
         <source>You don&apos;t have any orders.</source>
         <translation>Hiç emriniz yok.</translation>
     </message>
@@ -1913,8 +1893,26 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Exchange/OrdersPage.qml" line="255"/>
+        <location filename="../../qml/Exchange/OrdersPage.qml" line="256"/>
         <source>Recover Funds Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Pagination</name>
+    <message>
+        <location filename="../../qml/Components/Pagination.qml" line="11"/>
+        <source>Previous</source>
+        <translation type="unfinished">Geri</translation>
+    </message>
+    <message>
+        <location filename="../../qml/Components/Pagination.qml" line="29"/>
+        <source>Next</source>
+        <translation type="unfinished">İleri</translation>
+    </message>
+    <message>
+        <location filename="../../qml/Components/Pagination.qml" line="50"/>
+        <source>items per page</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2515,57 +2513,79 @@
     </message>
     <message>
         <location filename="../../qml/Support/Support.qml" line="116"/>
-        <source>No! AtomicDEX is non-custodial. We never store any sensitive data, including your private keys, seed phrases, or PIN. This data is  only stored on the user’s device and never leaves it. You are in full control of your assets.</source>
+        <source>No! SmartFi is non-custodial. We never store any sensitive data, including your private keys, seed phrases, or PIN. This data is  only stored on the user’s device and never leaves it. You are in full control of your assets.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../qml/Support/Support.qml" line="120"/>
-        <source>How is trading on AtomicDEX different from trading on other DEXs?</source>
+        <source>How is trading on SmartFi different from trading on other DEXs?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Support/Support.qml" line="121"/>
+        <source>Other DEXs generally only allow you to trade assets that are based on a single blockchain network, use proxy tokens, and only allow placing a single order with the same funds.
+
+SmartFi enables you to natively trade across two different blockchain networks without proxy tokens. You can also place multiple orders with the same funds. For example, you can sell 0.1 BTC for KMD, QTUM, or VRSC — the first order that fills automatically cancels all other orders.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Support/Support.qml" line="128"/>
+        <source>Several factors determine the processing time for each swap. The block time of the traded assets depends on each network (Bitcoin typically being the slowest) Additionally, the user can customize security preferences. For example,  (you can ask SmartFi to consider a KMD transaction as final after just 3 confirmations which makes the swap time shorter compared to waiting for a &lt;a href=&quot;https://komodoplatform.com/security-delayed-proof-of-work-dpow/&quot;&gt;notarization&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Support/Support.qml" line="137"/>
+        <source>How are the fees on SmartFi calculated?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Support/Support.qml" line="138"/>
+        <source>There are two fee categories to consider when trading on SmartFi.
+
+1. SmartFi charges approximately 0.13% (1/777 of trading volume but not lower than 0.0001) as the trading fee for taker orders, and maker orders have zero fees.
+2. Both makers and takers will need to pay normal network fees to the involved blockchains when making atomic swap transactions.
+
+Network fees can vary greatly depending on your selected trading pair.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Support/Support.qml" line="148"/>
+        <source>Yes! SmartFi offers support through the &lt;a href=&quot;https://komodoplatform.com/discord&quot;&gt;Komodo Discord server&lt;/a&gt;. The team and the community are always happy to help!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Support/Support.qml" line="152"/>
+        <source>Who is behind SmartFi?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Support/Support.qml" line="153"/>
+        <source>SmartFi is developed by the Komodo team. Komodo is one of the most established blockchain projects working on innovative solutions like atomic swaps, Delayed Proof of Work, and an interoperable multi-chain architecture.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Support/Support.qml" line="157"/>
+        <source>Is it possible to develop my own white-label exchange on SmartFi?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Support/Support.qml" line="158"/>
+        <source>Absolutely! You can read our developer documentation for more details or contact us with your partnership inquiries. Have a specific technical question? The SmartFi developer community is always ready to help!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Support/Support.qml" line="162"/>
+        <source>Which devices can I use SmartFi on?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../qml/Support/Support.qml" line="163"/>
+        <source>SmartFi is available for mobile on both &lt;a href=&quot;https://atomicdex.io/&quot;&gt;Android and iPhone, and for desktop on Windows, Mac, and Linux&lt;/a&gt; operating systems.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../qml/Support/Support.qml" line="133"/>
         <source>Yes. You must remain connected to the internet and have your app running to successfully complete each atomic swap (very short breaks in connectivity are usually fine). Otherwise, there is risk of trade cancellation if you are a maker, and risk of loss of funds if you are a taker. The atomic swap protocol requires both participants to stay online and monitor the involved blockchains for the process to stay atomic.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Support/Support.qml" line="137"/>
-        <source>How are the fees on AtomicDEX calculated?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Support/Support.qml" line="148"/>
-        <source>Yes! AtomicDEX offers support through the &lt;a href=&quot;https://komodoplatform.com/discord&quot;&gt;Komodo Discord server&lt;/a&gt;. The team and the community are always happy to help!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Support/Support.qml" line="152"/>
-        <source>Who is behind AtomicDEX?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Support/Support.qml" line="153"/>
-        <source>AtomicDEX is developed by the Komodo team. Komodo is one of the most established blockchain projects working on innovative solutions like atomic swaps, Delayed Proof of Work, and an interoperable multi-chain architecture.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Support/Support.qml" line="157"/>
-        <source>Is it possible to develop my own white-label exchange on AtomicDEX?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Support/Support.qml" line="158"/>
-        <source>Absolutely! You can read our developer documentation for more details or contact us with your partnership inquiries. Have a specific technical question? The AtomicDEX developer community is always ready to help!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Support/Support.qml" line="162"/>
-        <source>Which devices can I use AtomicDEX on?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Support/Support.qml" line="163"/>
-        <source>AtomicDEX is available for mobile on both &lt;a href=&quot;https://atomicdex.io/&quot;&gt;Android and iPhone, and for desktop on Windows, Mac, and Linux&lt;/a&gt; operating systems.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2584,30 +2604,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../qml/Support/Support.qml" line="121"/>
-        <source>Other DEXs generally only allow you to trade assets that are based on a single blockchain network, use proxy tokens, and only allow placing a single order with the same funds.
-
-AtomicDEX enables you to natively trade across two different blockchain networks without proxy tokens. You can also place multiple orders with the same funds. For example, you can sell 0.1 BTC for KMD, QTUM, or VRSC — the first order that fills automatically cancels all other orders.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Support/Support.qml" line="128"/>
-        <source>Several factors determine the processing time for each swap. The block time of the traded assets depends on each network (Bitcoin typically being the slowest) Additionally, the user can customize security preferences. For example,  (you can ask AtomicDEX to consider a KMD transaction as final after just 3 confirmations which makes the swap time shorter compared to waiting for a &lt;a href=&quot;https://komodoplatform.com/security-delayed-proof-of-work-dpow/&quot;&gt;notarization&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../qml/Support/Support.qml" line="132"/>
         <source>Do I need to be online for the duration of the swap?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../qml/Support/Support.qml" line="138"/>
-        <source>There are two fee categories to consider when trading on AtomicDEX.
-
-1. AtomicDEX charges approximately 0.13% (1/777 of trading volume but not lower than 0.0001) as the trading fee for taker orders, and maker orders have zero fees.
-2. Both makers and takers will need to pay normal network fees to the involved blockchains when making atomic swap transactions.
-
-Network fees can vary greatly depending on your selected trading pair.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2882,7 +2880,7 @@ Network fees can vary greatly depending on your selected trading pair.</source>
     <name>main</name>
     <message>
         <location filename="../../qml/main.qml" line="20"/>
-        <source>AtomicDEX Desktop</source>
+        <source>SmartFi Desktop</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

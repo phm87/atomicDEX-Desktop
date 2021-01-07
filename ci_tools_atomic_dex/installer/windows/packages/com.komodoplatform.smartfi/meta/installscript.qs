@@ -13,7 +13,7 @@ Component.prototype.createOperations = function()
                                "@TargetDir@/smartfi-desktop.exe", 
                                "@StartMenuDir@/ SmartFi Desktop.lnk",
                                "workingDirectory=@TargetDir@", 
-                               "iconPath=@TargetDir@/atomicdex-desktop.ico", "iconId=0",
+                               "iconPath=@TargetDir@/smartfi-desktop.ico", "iconId=0",
                                "description=Start  SmartFi Desktop");
         
         // Desktop Shortcut
@@ -21,7 +21,7 @@ Component.prototype.createOperations = function()
                             "@TargetDir@/smartfi-desktop.exe",
                             "@DesktopDir@/ SmartFi Desktop.lnk",
                             "workingDirectory=@TargetDir@",
-                            "iconPath=@TargetDir@/atomicdex-desktop.ico", "iconId=0",
+                            "iconPath=@TargetDir@/smartfi-desktop.ico", "iconId=0",
                             "description=Start  SmartFi Desktop");
 
 		// Maintenance Tool Start Menu Shortcut
@@ -29,7 +29,7 @@ Component.prototype.createOperations = function()
                                "@TargetDir@/ SmartFi Maintenance Tool.exe", 
                                "@StartMenuDir@/ SmartFi Maintenance Tool.lnk",
                                "workingDirectory=@TargetDir@", 
-                               "iconPath=@TargetDir@/atomicdex-desktop.ico", "iconId=0",
+                               "iconPath=@TargetDir@/smartfi-desktop.ico", "iconId=0",
                                "description=Start  SmartFi Maintenance Tool");
     }
 }

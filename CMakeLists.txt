@@ -143,7 +143,7 @@ add_subdirectory(vendor/antara-gaming_sdk/modules)
 
 ##! Osx bundle icon
 set(ICON)
-configure_icon_osx(data/osx/atomicdex-desktop.icns ICON atomicdex-desktop.icns)
+configure_icon_osx(data/osx/smartfi-desktop.icns ICON smartfi-desktop.icns)
 ##! End antara
 
 set(CMAKE_AUTOUIC ON)
@@ -386,7 +386,7 @@ if (LINUX)
     magic_game_app_image_generation("${CMAKE_CURRENT_SOURCE_DIR}/data/linux"
             "smartfi-desktop.desktop"
             "smartfi-desktop.appdata.xml"
-            "atomicdex-desktop-64.png"
+            "smartfi-desktop-64.png"
             smartfi-desktop
             AntaraAtomicDexAppDir
             ${CMAKE_CURRENT_SOURCE_DIR}/assets
@@ -395,7 +395,7 @@ if (LINUX)
     magic_game_app_image_generation("${CMAKE_CURRENT_SOURCE_DIR}/data/linux"
             "smartfi-desktop.desktop"
             "smartfi-desktop.appdata.xml"
-            "atomicdex-desktop-64.png"
+            "smartfi-desktop-64.png"
             smartfi-desktop_tests
             AntaraAtomicDexTestsAppDir
             ${CMAKE_CURRENT_SOURCE_DIR}/assets
@@ -404,7 +404,7 @@ if (LINUX)
     set(from_dir "${CMAKE_CURRENT_SOURCE_DIR}/data/linux")
     set(desktop_file "smartfi-desktop.desktop")
     set(appdata_file "smartfi-desktop.appdata.xml")
-    set(app_icon "atomicdex-desktop-64.png")
+    set(app_icon "smartfi-desktop-64.png")
     message(STATUS "${output_dir_at}")
     configure_file(${from_dir}/${desktop_file} ${output_dir_at}/usr/share/applications/${desktop_file} COPYONLY)
     configure_file(${from_dir}/${appdata_file} ${output_dir_at}/usr/share/metainfo/${appdata_file} COPYONLY)
