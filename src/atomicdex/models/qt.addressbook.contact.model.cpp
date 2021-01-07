@@ -100,6 +100,15 @@ namespace atomic_dex
             emit nameChanged();
         }
     }
+    
+    QVariant addressbook_contact_model::get_addresses(const QString& ticker)
+    {
+        addressbook_contact_addresses_model* data = *std::find_if(m_model_data.begin(), m_model_data.end(), [ticker](auto* model)
+        {
+            return model->get_type() == ticker;
+        });
+        return QVariant::fromValue(data);
+    }
 
     const QStringList&
     addressbook_contact_model::get_categories() const noexcept
@@ -194,7 +203,7 @@ namespace atomic_dex
             }
             create_addresses_model("QRC20");
             create_addresses_model("ERC20");
-            create_addresses_model("SmartChain");
+            create_addresses_model("SmartChains");
             endResetModel();
         }
     }
