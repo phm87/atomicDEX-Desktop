@@ -172,11 +172,11 @@ message(STATUS "TS FILES -> ${TS_FILES}")
 
 ##! Atomic QT Shared Deps Between main executable and unit tests
 if (LINUX)
-    add_library(atomicdex-desktop_shared_deps STATIC)
+    add_library(${PROJECT_NAME}_shared_deps STATIC)
 else ()
-    add_library(atomicdex-desktop_shared_deps SHARED)
+    add_library(${PROJECT_NAME}_shared_deps SHARED)
 endif ()
-target_sources(atomicdex-desktop_shared_deps PRIVATE
+target_sources(${PROJECT_NAME}_shared_deps PRIVATE
         ##! App
         ${CMAKE_SOURCE_DIR}/src/atomicdex/app.cpp
 
@@ -254,7 +254,7 @@ target_sources(atomicdex-desktop_shared_deps PRIVATE
         $<$<PLATFORM_ID:Darwin>:${CMAKE_SOURCE_DIR}/src/atomicdex/platform/osx/manager.mm>
         )
 
-target_compile_definitions(atomicdex-desktop_shared_deps
+target_compile_definitions(${PROJECT_NAME}_shared_deps
         PUBLIC
         $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>
         $<$<PLATFORM_ID:Windows>:HAS_REMOTE_API>
@@ -266,16 +266,16 @@ target_compile_definitions(atomicdex-desktop_shared_deps
 
 if (DISABLE_GEOBLOCKING)
     message(STATUS "Disabling Geoblocking for dev purpose")
-    target_compile_definitions(atomicdex-desktop_shared_deps PUBLIC -DDISABLE_GEOBLOCKING)
+    target_compile_definitions(${PROJECT_NAME}_shared_deps PUBLIC -DDISABLE_GEOBLOCKING)
 endif ()
-#target_compile_options(atomicdex-desktop_shared_deps INTERFACE -fstandalone-debug)
+#target_compile_options(${PROJECT_NAME}_shared_deps INTERFACE -fstandalone-debug)
 
 add_library(antara_qrcode STATIC)
 target_sources(antara_qrcode PRIVATE vendor/qrcode/QrCode.cpp)
 target_include_directories(antara_qrcode PUBLIC vendor/qrcode)
 target_link_libraries(antara_qrcode PUBLIC antara::default_settings)
 
-target_link_libraries(atomicdex-desktop_shared_deps
+target_link_libraries(${PROJECT_NAME}_shared_deps
         PUBLIC
         Qt::Core
         Qt::Quick
@@ -302,7 +302,7 @@ target_link_libraries(atomicdex-desktop_shared_deps
         Qaterial
         )
 
-target_include_directories(atomicdex-desktop_shared_deps
+target_include_directories(${PROJECT_NAME}_shared_deps
         PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         PRIVATE
@@ -345,14 +345,14 @@ add_executable(smartfi-desktop_tests MACOSX_BUNDLE ${ICON}
 
 target_link_libraries(smartfi-desktop
         PUBLIC
-        atomicdex-desktop_shared_deps
+        ${PROJECT_NAME}_shared_deps
         )
 
 target_include_directories(smartfi-desktop PUBLIC src)
 
 target_link_libraries(smartfi-desktop_tests
         PUBLIC
-        atomicdex-desktop_shared_deps
+        ${PROJECT_NAME}_shared_deps
         doctest::doctest)
 
 ##! Setting output directory
@@ -367,8 +367,8 @@ set_target_properties(${PROJECT_NAME}_tests
         )
 
 
-target_precompile_headers(atomicdex-desktop_shared_deps PRIVATE src/atomicdex/pch.hpp)
-#set_target_properties(atomicdex-desktop_shared_deps PROPERTIES UNITY_BUILD ON)
+target_precompile_headers(${PROJECT_NAME}_shared_deps PRIVATE src/atomicdex/pch.hpp)
+#set_target_properties(${PROJECT_NAME}_shared_deps PROPERTIES UNITY_BUILD ON)
 if (APPLE)
     set_source_files_properties(src/atomicdex/platform/osx/manager.mm PROPERTIES SKIP_PRECOMPILE_HEADERS ON)
     #set_property(SOURCE src/atomicdex/platform/osx/manager.mm PROPERTY SKIP_UNITY_BUILD_INCLUSION ON)
@@ -414,7 +414,7 @@ if (LINUX)
 endif ()
 
 if (WIN32)
-    set_target_properties(atomicdex-desktop_shared_deps PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+    set_target_properties(${PROJECT_NAME}_shared_deps PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
     file(COPY assets DESTINATION ${CMAKE_BINARY_DIR}/bin/)
     configure_file(wally/wally.dll ${CMAKE_BINARY_DIR}/bin/ COPYONLY)
@@ -439,10 +439,10 @@ if (WIN32)
     add_custom_command(TARGET smartfi-desktop PRE_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_directory
             ${CMAKE_SOURCE_DIR}/ci_tools_atomic_dex/windows_misc $<TARGET_FILE_DIR:atomicdex-desktop>)
-    message(STATUS "${WINDEPLOYQT_PATH} ${CMAKE_BINARY_DIR}/bin/${PROJECT_NAME}.exe ${CMAKE_BINARY_DIR}/bin/atomicdex-desktop_shared_deps.dll --qmldir ${CMAKE_SOURCE_DIR}/atomic_defi_design/qml")
+    message(STATUS "${WINDEPLOYQT_PATH} ${CMAKE_BINARY_DIR}/bin/${PROJECT_NAME}.exe ${CMAKE_BINARY_DIR}/bin/${PROJECT_NAME}_shared_deps.dll --qmldir ${CMAKE_SOURCE_DIR}/atomic_defi_design/qml")
     add_custom_command(TARGET atomicdex-desktop
             POST_BUILD
-            COMMAND ${WINDEPLOYQT_PATH} ${CMAKE_BINARY_DIR}/bin/${PROJECT_NAME}.exe ${CMAKE_BINARY_DIR}/bin/atomicdex-desktop_shared_deps.dll --qmldir ${CMAKE_SOURCE_DIR}/atomic_defi_design/qml
+            COMMAND ${WINDEPLOYQT_PATH} ${CMAKE_BINARY_DIR}/bin/${PROJECT_NAME}.exe ${CMAKE_BINARY_DIR}/bin/${PROJECT_NAME}_shared_deps.dll --qmldir ${CMAKE_SOURCE_DIR}/atomic_defi_design/qml
             )
     include(data/windows/atomicdex_install.cmake)
 endif ()
@@ -473,7 +473,7 @@ if (WITH_HOTRELOAD)
     target_link_libraries(${QATERIALHOTRELOAD_LIB} PUBLIC
             Qaterial
             SortFilterProxyModel
-            atomicdex-desktop_shared_deps
+            ${PROJECT_NAME}_shared_deps
             )
     target_link_libraries(${QATERIALHOTRELOAD_LIB} PRIVATE
             Qaterial::HotReload::Ui
