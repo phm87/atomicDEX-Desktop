@@ -84,9 +84,9 @@ namespace atomic_dex::utils
     {
         fs::path appdata_path;
 #if defined(_WIN32) || defined(WIN32)
-        appdata_path = fs::path(std::getenv("APPDATA")) / "atomic_qt";
+        appdata_path = fs::path(std::getenv("APPDATA")) / "smartfi_qt";
 #else
-        appdata_path = fs::path(std::getenv("HOME")) / ".atomic_qt";
+        appdata_path = fs::path(std::getenv("HOME")) / ".smartfi_qt";
 #endif
         return appdata_path;
     }
