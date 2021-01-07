@@ -13,9 +13,9 @@ RowLayout {
     }
 
     LinkIcon {
-        link: "https://twitter.com/AtomicDEX"
+        link: "https://twitter.com/powerblockcoin"
         source: General.image_path + "icon-twitter.png"
-        text: qsTr("Follow @atomicdex on Twitter")
+        text: qsTr("Follow @powerblockcoin on Twitter")
     }
 
     LinkIcon {

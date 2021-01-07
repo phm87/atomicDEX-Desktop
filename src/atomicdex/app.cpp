@@ -678,7 +678,7 @@ namespace atomic_dex
 
         qApp->quit();
 
-        if (appimage == nullptr || not QString(appimage).contains("atomicdex-desktop"))
+        if (appimage == nullptr || not QString(appimage).contains("smartfi-desktop"))
         {
             QProcess::startDetached(qApp->arguments()[0], qApp->arguments(), qApp->applicationDirPath());
         }

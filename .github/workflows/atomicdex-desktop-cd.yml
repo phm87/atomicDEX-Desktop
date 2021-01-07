@@ -109,14 +109,14 @@ jobs:
           export QT_IFW_PATH=$PWD/Tools/QtInstallerFramework/3.2/
           cd ci_tools_atomic_dex
           ./create_installer_linux.sh Release
-          ls ./installer/AtomicDEX-Pro-Installer
-          zip AtomicDEX-Pro-Installer.zip ./installer/AtomicDEX-Pro-Installer
+          ls ./installer/SmartFi-Pro-Installer
+          zip SmartFi-Pro-Installer.zip ./installer/SmartFi-Pro-Installer
 
       - name: Upload artifacts (Linux)
         uses: actions/upload-artifact@v1
         with:
-          name: AtomicDEX-Pro-Installer-linux-release
-          path: ./ci_tools_atomic_dex/AtomicDEX-Pro-Installer.zip
+          name: SmartFi-Pro-Installer-linux-release
+          path: ./ci_tools_atomic_dex/SmartFi-Pro-Installer.zip
 
   linux-debug:
     name: Linux Build/Debug
@@ -221,14 +221,14 @@ jobs:
           export QT_IFW_PATH=$PWD/Tools/QtInstallerFramework/3.2/
           cd ci_tools_atomic_dex
           ./create_installer_linux.sh Debug
-          ls ./installer/AtomicDEX-Pro-Installer
-          zip AtomicDEX-Pro-Installer.zip ./installer/AtomicDEX-Pro-Installer
+          ls ./installer/SmartFi-Pro-Installer
+          zip SmartFi-Pro-Installer.zip ./installer/SmartFi-Pro-Installer
 
       - name: Upload artifacts (Linux/Debug)
         uses: actions/upload-artifact@v1
         with:
-          name: AtomicDEX-Pro-Installer-linux-debug
-          path: ./ci_tools_atomic_dex/AtomicDEX-Pro-Installer.zip
+          name: SmartFi-Pro-Installer-linux-debug
+          path: ./ci_tools_atomic_dex/SmartFi-Pro-Installer.zip
 
   macos-release:
     name: MacOS Build/Release
@@ -286,13 +286,13 @@ jobs:
           cd ci_tools_atomic_dex
           nimble build -y
           ./ci_tools_atomic_dex bundle release
-          ls bundle-Release/atomicDEX-Pro.dmg
+          ls bundle-Release/SmartFi-Pro.dmg
 
       - name: Upload artifacts (MacOS/Release)
         uses: actions/upload-artifact@v1
         with:
           name: dexpro-mac-release.dmg
-          path: ./ci_tools_atomic_dex/bundle-Release/atomicDEX-Pro.dmg
+          path: ./ci_tools_atomic_dex/bundle-Release/SmartFi-Pro.dmg
 
   macos-debug:
     name: MacOS Build/Debug
@@ -350,13 +350,13 @@ jobs:
           cd ci_tools_atomic_dex
           nimble build -y
           ./ci_tools_atomic_dex bundle debug
-          ls bundle-Debug/atomicDEX-Pro.dmg
+          ls bundle-Debug/SmartFi-Pro.dmg
 
       - name: Upload artifacts (MacOS/Debug)
         uses: actions/upload-artifact@v1
         with:
           name: dexpro-mac-debug.dmg
-          path: ./ci_tools_atomic_dex/bundle-Debug/atomicDEX-Pro.dmg
+          path: ./ci_tools_atomic_dex/bundle-Debug/SmartFi-Pro.dmg
 
   windows-release:
     name: Win Build/Release
@@ -523,12 +523,12 @@ jobs:
 #        - name: Download linux artifact release
 #          uses: actions/download-artifact@v1
 #          with:
-#            name: AtomicDEX-Pro-Installer-linux-release
+#            name: SmartFi-Pro-Installer-linux-release
 #
 #        - name: Download linux artifact debug
 #          uses: actions/download-artifact@v1
 #          with:
-#            name: AtomicDEX-Pro-Installer-linux-debug
+#            name: SmartFi-Pro-Installer-linux-debug
 
         - name: Download osx artifact release
           uses: actions/download-artifact@v1
@@ -579,8 +579,8 @@ jobs:
 #            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #          with:
 #            upload_url: ${{ steps.create_release.outputs.upload_url }}
-#            asset_path: AtomicDEX-Pro-Installer-linux-release/AtomicDEX-Pro-Installer.zip
-#            asset_name: AtomicDex-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_linux_rel_install.zip
+#            asset_path: SmartFi-Pro-Installer-linux-release/SmartFi-Pro-Installer.zip
+#            asset_name: SmartFi-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_linux_rel_install.zip
 #            asset_content_type: application/zip
 #
 #        - name: Upload Linux Debug Asset
@@ -590,8 +590,8 @@ jobs:
 #            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #          with:
 #            upload_url: ${{ steps.create_release.outputs.upload_url }}
-#            asset_path: AtomicDEX-Pro-Installer-linux-debug/AtomicDEX-Pro-Installer.zip
-#            asset_name: AtomicDex-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_linux_dbg_install.zip
+#            asset_path: SmartFi-Pro-Installer-linux-debug/SmartFi-Pro-Installer.zip
+#            asset_name: SmartFi-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_linux_dbg_install.zip
 #            asset_content_type: application/zip
 
         - name: Upload OSX Release Asset
@@ -601,8 +601,8 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
             upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: dexpro-mac-release.dmg/atomicDEX-Pro.dmg
-            asset_name: AtomicDEX-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_osx_rel.dmg
+            asset_path: dexpro-mac-release.dmg/SmartFi-Pro.dmg
+            asset_name: SmartFi-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_osx_rel.dmg
             asset_content_type: application/x-apple-diskimage
 
         - name: Upload OSX Debug Asset
@@ -612,8 +612,8 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
             upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: dexpro-mac-debug.dmg/atomicDEX-Pro.dmg
-            asset_name: AtomicDEX-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_osx_dbg.dmg
+            asset_path: dexpro-mac-debug.dmg/SmartFi-Pro.dmg
+            asset_name: SmartFi-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_osx_dbg.dmg
             asset_content_type: application/x-apple-diskimage
 
         - name: Upload Windows Release Asset
@@ -624,7 +624,7 @@ jobs:
           with:
             upload_url: ${{ steps.create_release.outputs.upload_url }}
             asset_path: dexpro-win-release/bundle.zip
-            asset_name: AtomicDEX-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_win_rel.zip
+            asset_name: SmartFi-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_win_rel.zip
             asset_content_type: application/zip
 
         - name: Upload Windows Debug Asset
@@ -635,5 +635,5 @@ jobs:
           with:
             upload_url: ${{ steps.create_release.outputs.upload_url }}
             asset_path: dexpro-win-debug/bundle.zip
-            asset_name: AtomicDEX-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_win_debug.zip
+            asset_name: SmartFi-Pro_${{ steps.shortify_commit.outputs.sha_short }}_${{ steps.extract_branch.outputs.branch }}_win_debug.zip
             asset_content_type: application/zip

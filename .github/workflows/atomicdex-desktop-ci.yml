@@ -243,7 +243,7 @@ jobs:
           export QT_ROOT=${{ github.workspace }}/Qt/${{ matrix.qt }}
           echo "Running tests"
           ./ci_tools_atomic_dex tests ${{ matrix.type }}
-          cd build-${{ matrix.type }}/bin/atomicdex-desktop_tests.app/Contents/MacOS
+          cd build-${{ matrix.type }}/bin/smartfi-desktop_tests.app/Contents/MacOS
           cat atomic-dex-tests-result.xml
           curl https://report.ci/upload.py --output upload.py
           ls
@@ -269,12 +269,12 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           ls ./bundled/linux/
-          echo "artifact_name_zstd=atomicdex-desktop-${{ matrix.name }}-$(git rev-parse --short HEAD).tar.zst" >> $GITHUB_ENV
-          echo "artifact_name_zip=atomicdex-desktop-${{ matrix.name }}-$(git rev-parse --short HEAD).zip" >> $GITHUB_ENV
-          echo "artifact_name_appimage=atomicdex-desktop-${{ matrix.name }}-$(git rev-parse --short HEAD)-x86_64.AppImage" >> $GITHUB_ENV
-          echo "target_name_zstd=atomicdex-desktop-linux-$(git rev-parse --short HEAD).tar.zst" >> $GITHUB_ENV
-          echo "target_name_zip=atomicdex-desktop-linux-$(git rev-parse --short HEAD).zip" >> $GITHUB_ENV
-          echo "target_name_appimage=atomicdex-desktop-$(git rev-parse --short HEAD)-x86_64.AppImage" >> $GITHUB_ENV
+          echo "artifact_name_zstd=smartfi-desktop-${{ matrix.name }}-$(git rev-parse --short HEAD).tar.zst" >> $GITHUB_ENV
+          echo "artifact_name_zip=smartfi-desktop-${{ matrix.name }}-$(git rev-parse --short HEAD).zip" >> $GITHUB_ENV
+          echo "artifact_name_appimage=smartfi-desktop-${{ matrix.name }}-$(git rev-parse --short HEAD)-x86_64.AppImage" >> $GITHUB_ENV
+          echo "target_name_zstd=smartfi-desktop-linux-$(git rev-parse --short HEAD).tar.zst" >> $GITHUB_ENV
+          echo "target_name_zip=smartfi-desktop-linux-$(git rev-parse --short HEAD).zip" >> $GITHUB_ENV
+          echo "target_name_appimage=smartfi-desktop-$(git rev-parse --short HEAD)-x86_64.AppImage" >> $GITHUB_ENV
 
       - name: Upload bundle artifact (Linux ZSTD)
         if: runner.os == 'Linux'
@@ -301,29 +301,29 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           ls ./bundled/osx/
-          echo "artifact_name_dmg=atomicdex-desktop-${{ matrix.name }}-$(git rev-parse --short HEAD).dmg" >> $GITHUB_ENV
-          echo "artifact_name_installer=atomicdex-desktop-installer-${{ matrix.name }}-$(git rev-parse --short HEAD).7z" >> $GITHUB_ENV
+          echo "artifact_name_dmg=smartfi-desktop-${{ matrix.name }}-$(git rev-parse --short HEAD).dmg" >> $GITHUB_ENV
+          echo "artifact_name_installer=smartfi-desktop-installer-${{ matrix.name }}-$(git rev-parse --short HEAD).7z" >> $GITHUB_ENV
 
       - name: Upload artifacts (MacOS dmg)
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.artifact_name_dmg }}
-          path: ./bundled/osx/atomicdex-desktop.dmg
+          path: ./bundled/osx/smartfi-desktop.dmg
 
       - name: Upload artifacts (MacOS installer)
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.artifact_name_installer }}
-          path: ./bundled/osx/atomicdex_desktop_installer.7z
+          path: ./bundled/osx/smartfi_desktop_installer.7z
 
       - name: Upload env variable for artifacts (Windows)
         if: runner.os == 'Windows'
         run: |
           echo "on_windows"
-          echo "artifact_name_zip=atomicdex-desktop-${{ matrix.name }}-$(git rev-parse --short HEAD).zip" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-          echo "artifact_name_installer=atomicdex-desktop-installer-${{ matrix.name }}-$(git rev-parse --short HEAD).exe" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          echo "artifact_name_zip=smartfi-desktop-${{ matrix.name }}-$(git rev-parse --short HEAD).zip" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          echo "artifact_name_installer=smartfi-desktop-installer-${{ matrix.name }}-$(git rev-parse --short HEAD).exe" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
       - name: Upload artifacts (Windows zip)
         if: runner.os == 'Windows'
@@ -337,6 +337,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.artifact_name_installer }}
-          path: ./bundled/windows/atomicdex_desktop_installer.exe
+          path: ./bundled/windows/smartfi_desktop_installer.exe
       
       

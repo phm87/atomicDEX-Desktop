@@ -109,9 +109,9 @@ namespace atomic_dex
             return QLocale::Language::AnyLanguage;
         };
 
-        SPDLOG_INFO("Locale before parsing AtomicDEX settings: {}", QLocale().name().toStdString());
+        SPDLOG_INFO("Locale before parsing SmartFi settings: {}", QLocale().name().toStdString());
         QLocale::setDefault(get_locale(m_config.current_lang));
-        SPDLOG_INFO("Locale after parsing AtomicDEX settings: {}", QLocale().name().toStdString());
+        SPDLOG_INFO("Locale after parsing SmartFi settings: {}", QLocale().name().toStdString());
         [[maybe_unused]] auto res = this->m_translator.load("atomic_defi_" + new_lang, QLatin1String(":/atomic_defi_design/assets/languages"));
         assert(res);
         this->m_app->installTranslator(&m_translator);

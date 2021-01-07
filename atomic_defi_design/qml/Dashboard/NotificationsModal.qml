@@ -198,7 +198,7 @@ BasicModal {
             showApp()
         }
 
-        tooltip: qsTr("AtomicDEX Desktop")
+        tooltip: qsTr("SmartFi Desktop")
 
 //        onActivated: showApp()
 
