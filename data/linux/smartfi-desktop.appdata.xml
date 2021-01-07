@@ -1,20 +1,20 @@
 <component type="desktop-application">
-    <id>atomicDeFi.desktop</id>
+    <id>SmartFi.desktop</id>
     <metadata_license>MIT</metadata_license>
     <project_license>MIT</project_license>
-    <name>atomicDeFi</name>
-    <summary>atomic qt  gui desktop</summary>
+    <name>SmartFi</name>
+    <summary>SmartFi Desktop</summary>
     <description>
         <p>Written in c++17</p>
     </description>
-    <launchable type="desktop-id">atomicDeFi.desktop</launchable>
-    <url type="homepage">https://github.com/KomodoPlatform/antara-gaming-sdk</url>
+    <launchable type="desktop-id">SmartFi.desktop</launchable>
+    <url type="homepage">https://atomicdex.io/</url>
     <screenshots>
         <screenshot type="default">
             <image>https://www.freedesktop.org/software/appstream/docs/images/scr-examples/geany-good.png</image>
         </screenshot>
     </screenshots>
     <provides>
-        <id>atomicDeFi.desktop</id>
+        <id>SmartFi.desktop</id>
     </provides>
 </component>
