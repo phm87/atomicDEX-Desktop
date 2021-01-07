@@ -325,7 +325,7 @@ add_executable(smartfi-desktop MACOSX_BUNDLE ${ICON}
 target_compile_definitions(smartfi-desktop PRIVATE ENTT_API_IMPORT)
 
 ##! Testing executable
-add_executable(atomicdex-desktop_tests MACOSX_BUNDLE ${ICON}
+add_executable(smartfi-desktop_tests MACOSX_BUNDLE ${ICON}
         src/atomicdex/tests/atomic.dex.tests.cpp
         src/atomicdex/tests/atomic.dex.wallet.config.tests.cpp
         src/atomicdex/tests/atomic.dex.provider.cex.prices.tests.cpp
@@ -350,7 +350,7 @@ target_link_libraries(smartfi-desktop
 
 target_include_directories(smartfi-desktop PUBLIC src)
 
-target_link_libraries(atomicdex-desktop_tests
+target_link_libraries(smartfi-desktop_tests
         PUBLIC
         atomicdex-desktop_shared_deps
         doctest::doctest)

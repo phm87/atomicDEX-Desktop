@@ -15,19 +15,19 @@ proc run_tests*(build_type: string, osx_sdk_path: string, compiler_path: string)
         echo os.getCurrentDir()
         os.setCurrentDir(os.getCurrentDir().joinPath("bin").joinPath("smartfi-desktop_tests.app").joinPath("Contents").joinPath("MacOS"))
         echo "Running AtomicDex Pro Unit tests"
-        discard osproc.execCmd("./smartfi-desktop_tests --reporters=xml --out=atomic-dex-tests-result.xml -s")
-        echo "Successfully Generated atomic-dex-tests-result.xml"
+        discard osproc.execCmd("./smartfi-desktop_tests --reporters=xml --out=smartfi-tests-result.xml -s")
+        echo "Successfully Generated smartfi-tests-result.xml"
    
      when defined(linux):
         echo os.getCurrentDir()
         os.setCurrentDir(os.getCurrentDir().joinPath("bin").joinPath("AntaraAtomicDexTestsAppDir").joinPath("usr").joinPath("bin"))
         echo "Running AtomicDex Pro Unit tests"
-        discard osproc.execCmd("./smartfi-desktop_tests --reporters=xml --out=atomic-dex-tests-result.xml -s")
-        echo "Successfully Generated atomic-dex-tests-result.xml"
+        discard osproc.execCmd("./smartfi-desktop_tests --reporters=xml --out=smartfi-tests-result.xml -s")
+        echo "Successfully Generated smartfi-tests-result.xml"
      
      when defined(windows):
         echo os.getCurrentDir()
         os.setCurrentDir(os.getCurrentDir().joinPath("bin"))
         echo "Running AtomicDex Pro Unit tests"
-        discard osproc.execCmd(".\\smartfi-desktop_tests.exe --reporters=xml --out=atomic-dex-tests-result.xml -s")
-        echo "Successfully Generated atomic-dex-tests-result.xml"
+        discard osproc.execCmd(".\\smartfi-desktop_tests.exe --reporters=xml --out=smartfi-tests-result.xml -s")
+        echo "Successfully Generated smartfi-tests-result.xml"
