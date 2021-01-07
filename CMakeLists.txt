@@ -312,7 +312,7 @@ target_include_directories(atomicdex-desktop_shared_deps
 
 ##! Main executable
 add_executable(smartfi-desktop MACOSX_BUNDLE ${ICON}
-        ${CMAKE_CURRENT_SOURCE_DIR}/data/windows/atomicdex-desktop.rc
+        ${CMAKE_CURRENT_SOURCE_DIR}/data/windows/smartfi-desktop.rc
         main.cpp
         ##! QRC
         ${CMAKE_SOURCE_DIR}/qml.qrc
@@ -386,7 +386,7 @@ if (LINUX)
     magic_game_app_image_generation("${CMAKE_CURRENT_SOURCE_DIR}/data/linux"
             "smartfi-desktop.desktop"
             "smartfi-desktop.appdata.xml"
-            "smartfi-desktop_64.png"
+            "atomicdex-desktop-64.png"
             smartfi-desktop
             AntaraAtomicDexAppDir
             ${CMAKE_CURRENT_SOURCE_DIR}/assets
@@ -395,7 +395,7 @@ if (LINUX)
     magic_game_app_image_generation("${CMAKE_CURRENT_SOURCE_DIR}/data/linux"
             "smartfi-desktop.desktop"
             "smartfi-desktop.appdata.xml"
-            "smartfi-desktop_64.png"
+            "atomicdex-desktop-64.png"
             smartfi-desktop_tests
             AntaraAtomicDexTestsAppDir
             ${CMAKE_CURRENT_SOURCE_DIR}/assets
@@ -404,7 +404,7 @@ if (LINUX)
     set(from_dir "${CMAKE_CURRENT_SOURCE_DIR}/data/linux")
     set(desktop_file "smartfi-desktop.desktop")
     set(appdata_file "smartfi-desktop.appdata.xml")
-    set(app_icon "smartfi-desktop-64.png")
+    set(app_icon "atomicdex-desktop-64.png")
     message(STATUS "${output_dir_at}")
     configure_file(${from_dir}/${desktop_file} ${output_dir_at}/usr/share/applications/${desktop_file} COPYONLY)
     configure_file(${from_dir}/${appdata_file} ${output_dir_at}/usr/share/metainfo/${appdata_file} COPYONLY)
