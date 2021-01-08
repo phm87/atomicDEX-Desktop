@@ -83,7 +83,7 @@ namespace atomic_dex
         QStringList coins_copy;
         for (auto&& coin: coins)
         {
-            if (not get_orders()->swap_is_in_progress(coin) && coin != "PBC" && coin != "BTC")
+            if (not get_orders()->swap_is_in_progress(coin) && coin != "BTC" && coin != "KMD" && coin != "PBC")
             {
                 if (coin == "ETH" || coin == "QTUM")
                 {
@@ -106,7 +106,7 @@ namespace atomic_dex
             {
                 if (QString::fromStdString(get_mm2().get_current_ticker()) == coin && m_kmd_fully_enabled)
                 {
-                    system_manager_.get_system<wallet_page>().set_current_ticker("PBC");
+                    system_manager_.get_system<wallet_page>().set_current_ticker("KMD");
                 }
                 coins_std.push_back(coin.toStdString());
             }
@@ -184,7 +184,7 @@ namespace atomic_dex
                 system_manager_.get_system<portfolio_page>().initialize_portfolio(to_init);
                 if (m_kmd_fully_enabled && m_btc_fully_enabled)
                 {
-                    if (std::find(to_init.begin(), to_init.end(), "PBC") != to_init.end())
+                    if (std::find(to_init.begin(), to_init.end(), "KMD") != to_init.end())
                     {
                         get_wallet_page()->get_transactions_mdl()->reset();
                         this->dispatcher_.trigger<tx_fetch_finished>();

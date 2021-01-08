@@ -52,7 +52,7 @@ TEST_CASE("rpc ohlc")
 {
     CHECK_EQ(42,42);
     /*
-    atomic_dex::ohlc_request req{.base_asset = "pbc", .quote_asset = "btc"};
+    atomic_dex::ohlc_request req{.base_asset = "kmd", .quote_asset = "btc"};
     auto                     answer_rpc = atomic_dex::async_rpc_ohlc_get_data(std::move(req)).get();
     auto                     answer     = atomic_dex::ohlc_answer_from_async_resp(answer_rpc);
     CHECK_FALSE(answer.error.has_value());
