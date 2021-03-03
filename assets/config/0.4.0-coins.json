@@ -2958,6 +2958,23 @@
   "active": false,
   "currently_enabled": false
  },
+ "WSCRT": {
+  "coin": "WSCRT",
+  "name": "WSCRT",
+  "coinpaprika_id": "",
+  "coingecko_id": "secret-erc20",
+  "eth_nodes": [
+   "http://eth1.cipig.net:8555",
+   "http://eth2.cipig.net:8555",
+   "http://eth3.cipig.net:8555"
+  ],
+  "explorer_url": [
+   "https://etherscan.io/"
+  ],
+  "type": "ERC-20",
+  "active": false,
+  "currently_enabled": false
+ },
  "XOR": {
   "coin": "XOR",
   "name": "Sora Token",
